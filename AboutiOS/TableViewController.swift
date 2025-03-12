@@ -39,14 +39,14 @@ class TableViewController: UIViewController {
         filteredSections = allSections  // 초기에는 전체 데이터 사용
     }
     
-    // navigation title 세팅
+    //MARK: - navigation title 세팅
     func setNavigationTitle() {
         title = "Table View"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
     }
     
-    // 검색 컨트롤러 설정
+    //MARK: - 검색 컨트롤러 세팅
     func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -57,17 +57,17 @@ class TableViewController: UIViewController {
 }
 
 extension TableViewController: UITableViewDelegate, UITableViewDataSource {
-    // 섹션 개수
+    //MARK: - 섹션 개수
     func numberOfSections(in tableView: UITableView) -> Int {
         return filteredSections.count
     }
     
-    // 각 섹션별 행 개수
+    //MARK: - 각 섹션별 행 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredSections[section].items.count
     }
 
-    // 셀 설정
+    //MARK: - 셀 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ??
                    UITableViewCell(style: .default, reuseIdentifier: "Cell")
@@ -81,12 +81,12 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    // 섹션 헤더 설정
+    //MARK: - 섹션 헤더 설정
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return searchController.isActive ? nil : filteredSections[section].header
     }
     
-    // 셀 선택 시 동작
+    //MARK: - 셀 선택 시 동작
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.section {
@@ -105,6 +105,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension TableViewController: UISearchResultsUpdating {
+    //MARK: - 검색 결과
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text?.lowercased() ?? ""
         
