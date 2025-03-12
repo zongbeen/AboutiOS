@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WKWebView JS Test</title>
+</head>
+<body>
+    <h1>WKWebView & JavaScript 통신</h1>
+    
+    <button onclick="sendMessageToiOS()">iOS로 메시지 보내기</button>
+
+    <hr>
+
+    <!-- 주소 입력 창 및 이동 버튼 추가 -->
+    <input type="text" id="urlInput" placeholder="이동할 주소 입력 (예: https://www.apple.com)">
+    <button onclick="navigateToURL()">이동</button>
+
+    <script>
+        function sendMessageToiOS() {
+            if (window.webkit && window.webkit.messageHandlers.iosListener) {
+                window.webkit.messageHandlers.iosListener.postMessage("Hello from JavaScript!");
+            }
+        }
+
+        function showMessageFromSwift(message) {
+            alert("Swift에서 보낸 메시지: " + message);
+        }
+        
+        function navigateToURL() {
+            let url = document.getElementById("urlInput").value.trim();
+            if (url) {
+                if (!url.startsWith("http")) {
+                    url = "https://" + url;  // URL이 http나 https로 시작하지 않으면 https 추가
+                }
+
+                if (window.webkit && window.webkit.messageHandlers.urlListener) {
+                    window.webkit.messageHandlers.urlListener.postMessage(url);
+                }
+            } else {
+                alert("URL을 입력하세요.");
+            }
+        }
+    </script>
+</body>
+</html>

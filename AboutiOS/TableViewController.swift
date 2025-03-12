@@ -12,6 +12,7 @@ class TableViewController: UIViewController {
     
     private let allSections: [(header: String?, items: [(imageName: String, title: String)])] = [
         (nil, [
+            ("network", "WebViewController"),
             ("wifi", "Wi-Fi"),
             ("bolt.horizontal", "Bluetooth"),
             ("airplane", "Airplane Mode"),

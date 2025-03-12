@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W6m-iU-qZL">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -51,37 +51,32 @@
             </objects>
             <point key="canvasLocation" x="1002.2900763358779" y="-2.1126760563380285"/>
         </scene>
-        <!--Wifi View Controller-->
-        <scene sceneID="X5o-Mu-hrm">
+        <!--Web View Controller-->
+        <scene sceneID="ezC-BB-biq">
             <objects>
-                <viewController storyboardIdentifier="WifiViewController" id="QBX-wi-An3" customClass="WifiViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="u6U-zW-Pxg">
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jaq-vz-MxS" customClass="WebViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PqS-Wf-iDo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pah-kh-HII">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cDa-ds-cpj">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Vy7-gv-xhd"/>
+                        <viewLayoutGuide key="safeArea" id="ee0-lR-IEv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pah-kh-HII" firstAttribute="top" secondItem="Vy7-gv-xhd" secondAttribute="top" id="3jq-HR-z1L"/>
-                            <constraint firstItem="pah-kh-HII" firstAttribute="leading" secondItem="Vy7-gv-xhd" secondAttribute="leading" id="KR4-eh-rPd"/>
-                            <constraint firstItem="Vy7-gv-xhd" firstAttribute="bottom" secondItem="pah-kh-HII" secondAttribute="bottom" id="P79-Cg-SYy"/>
-                            <constraint firstItem="Vy7-gv-xhd" firstAttribute="trailing" secondItem="pah-kh-HII" secondAttribute="trailing" id="ZcP-Tf-ck2"/>
+                            <constraint firstItem="ee0-lR-IEv" firstAttribute="trailing" secondItem="cDa-ds-cpj" secondAttribute="trailing" id="4we-4T-eA2"/>
+                            <constraint firstItem="ee0-lR-IEv" firstAttribute="bottom" secondItem="cDa-ds-cpj" secondAttribute="bottom" id="NTz-un-Viv"/>
+                            <constraint firstItem="cDa-ds-cpj" firstAttribute="leading" secondItem="ee0-lR-IEv" secondAttribute="leading" id="VkY-dP-vUf"/>
+                            <constraint firstItem="cDa-ds-cpj" firstAttribute="top" secondItem="ee0-lR-IEv" secondAttribute="top" id="gk7-kK-qJC"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="pah-kh-HII" id="Zkw-5m-nYP"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2CU-zV-phJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trM-ZE-Ogj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="-2"/>
+            <point key="canvasLocation" x="1876" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JgZ-Aa-2Ls">
