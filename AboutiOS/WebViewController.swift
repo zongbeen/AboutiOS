@@ -58,7 +58,7 @@ extension WebViewController: WKScriptMessageHandler, WKNavigationDelegate {
     
     //MARK: - JavaScript에서 메시지 받았을 때 호출
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        var messageName = message.name
+        let messageName = message.name
         
         if let messageBody = message.body as? String {
             switch messageName {
