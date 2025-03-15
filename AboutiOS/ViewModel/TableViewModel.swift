@@ -9,11 +9,11 @@ import Foundation
 
 class TableViewModel {
     private let allSections: [Section] = [
-        Section(header: "Table View", items: [
-            Item(imageName: "doc.badge.gearshape.fill", title: Titles.tableViewDetail)
+        Section(header: "Table View", footer: "This is a table view section", items: [
+            Item(imageName: "doc.badge.gearshape.fill", title: "TableView Detail")
         ]),
-        Section(header: "Other", items: [
-            Item(imageName: "network", title: Titles.webView)
+        Section(header: "Other", footer: nil, items: [
+            Item(imageName: "network", title: "WebView")
         ])
     ]
     
@@ -30,7 +30,7 @@ class TableViewModel {
         } else {
             filteredSections = allSections.compactMap { section in
                 let filteredItems = section.items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
-                return filteredItems.isEmpty ? nil : Section(header: section.header, items: filteredItems)
+                return filteredItems.isEmpty ? nil : Section(header: section.header, footer: section.footer, items: filteredItems)
             }
         }
         onDataUpdated?()

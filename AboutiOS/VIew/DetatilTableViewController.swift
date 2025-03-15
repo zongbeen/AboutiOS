@@ -16,17 +16,17 @@ class DetatilTableViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func setupUI() {
         title = "Table View Detail"
         navigationController?.navigationBar.prefersLargeTitles = false
         
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 

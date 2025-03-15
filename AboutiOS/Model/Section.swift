@@ -7,6 +7,7 @@
 
 struct Section {
     let header: String?
+    let footer: String?
     let items: [Item]
 }
 
