@@ -59,7 +59,7 @@ extension GroupedTableViewController: UITableViewDataSource, UITableViewDelegate
     
     //MARK: - 섹션 header의 높이 설정
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return allSections[section].header == nil ? 20 : 30
+        return allSections[section].header == nil ? 0 : 30
     }
     
     //MARK: - 섹션 footer 설정

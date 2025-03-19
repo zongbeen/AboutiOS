@@ -79,12 +79,12 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: - 섹션 footer 설정
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         let footer = viewModel.filteredSections[section].footer
-        return searchController.isActive ? nil : (footer?.isEmpty == false ? footer : nil)
+        return searchController.isActive ? nil : viewModel.filteredSections[section].footer
     }
     //MARK: - 섹션 header의 높이 설정
     //UITableView.Style.insetGrouped를 사용할 때, 첫 번째 섹션 헤더가 테이블 뷰의 상단 contentInset이나 sectionHeaderHeight와 상호작용하면서 가려짐
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 20 : 30
+        return viewModel.filteredSections[section].header == nil ? 0 : 30
     }
     
     //MARK: - 섹션 footer의 높이 설정
