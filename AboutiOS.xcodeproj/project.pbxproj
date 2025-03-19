@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9ECB956E2D7B1FBC003FACB6 /* TableViewController.swift */,
-				9EE04F1B2D85425200D3B9BC /* DetatilTableViewController.swift */,
+				9EF25A872D8AEBD200CEB898 /* SubTableViewController */,
 				9EE04F172D81B5ED00D3B9BC /* WebViewController.swift */,
 			);
 			path = VIew;
@@ -128,6 +128,7 @@
 			path = Contents;
 			sourceTree = "<group>";
 		};
+				9EE04F1B2D85425200D3B9BC /* DetatilTableViewController.swift */,
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */

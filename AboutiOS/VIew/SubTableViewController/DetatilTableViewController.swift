@@ -16,13 +16,8 @@ class DetatilTableViewController: UIViewController {
         setupUI()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     private func setupUI() {
-        title = "Table View Detail"
+        title = "Detail Table View"
         navigationController?.navigationBar.prefersLargeTitles = false
         
         tableView.delegate = self
@@ -62,14 +57,19 @@ extension DetatilTableViewController: UITableViewDataSource, UITableViewDelegate
         let selectedItem = viewModel.allSections[indexPath.section].items[indexPath.row]
         
         switch selectedItem.title {
-        case Titles.tableViewDetail:
+        case Titles.plainStyle:
             if let viewController = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "DetatilTableViewController") as? DetatilTableViewController {
+                .instantiateViewController(withIdentifier: "PlainTableViewController") as? PlainTableViewController {
                 navigationController?.pushViewController(viewController, animated: true)
             }
-        case Titles.webView:
+        case Titles.groupedStyle:
             if let viewController = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                .instantiateViewController(withIdentifier: "GroupedTableViewController") as? GroupedTableViewController {
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        case Titles.insetGroupedStyle:
+            if let viewController = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "InsetGroupedTableViewController") as? InsetGroupedTableViewController {
                 navigationController?.pushViewController(viewController, animated: true)
             }
         default: break

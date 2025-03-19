@@ -18,6 +18,10 @@ class TableViewController: UIViewController {
         setupBindings()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func setupUI() {
         title = "Table View"
         navigationController?.navigationBar.prefersLargeTitles = true
