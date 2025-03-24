@@ -72,6 +72,11 @@ extension DetatilTableViewController: UITableViewDataSource, UITableViewDelegate
                 .instantiateViewController(withIdentifier: "InsetGroupedTableViewController") as? InsetGroupedTableViewController {
                 navigationController?.pushViewController(viewController, animated: true)
             }
+        case Titles.swipe:
+            if let viewController = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "SwipeTableViewController") as? SwipeTableViewController {
+                navigationController?.pushViewController(viewController, animated: true)
+            }
         default: break
         }
     }

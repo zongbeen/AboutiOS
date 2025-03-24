@@ -7,8 +7,12 @@
 
 enum Titles {
     static let tableViewDetail = "TableView Detail"
+    
     static let plainStyle = "Plain Style"
     static let groupedStyle = "Grouped Style"
     static let insetGroupedStyle = "InsetGrouped Style"
+    
+    static let swipe = "Swipe"
+    
     static let webView = "WebView"
 }

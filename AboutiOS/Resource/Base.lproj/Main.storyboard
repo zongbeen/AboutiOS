@@ -235,6 +235,33 @@
             </objects>
             <point key="canvasLocation" x="3999" y="-696"/>
         </scene>
+        <!--Swipe Table View Controller-->
+        <scene sceneID="RD4-tj-awh">
+            <objects>
+                <viewController storyboardIdentifier="SwipeTableViewController" id="YH7-6g-tMY" customClass="SwipeTableViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ImH-zc-M0K">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h3G-1b-AIm">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Beb-T7-Cfy"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h3G-1b-AIm" firstAttribute="leading" secondItem="Beb-T7-Cfy" secondAttribute="leading" id="7Sp-RY-oM4"/>
+                            <constraint firstItem="Beb-T7-Cfy" firstAttribute="bottom" secondItem="h3G-1b-AIm" secondAttribute="bottom" id="7bS-MC-2Dp"/>
+                            <constraint firstItem="Beb-T7-Cfy" firstAttribute="trailing" secondItem="h3G-1b-AIm" secondAttribute="trailing" id="SOC-PT-HX4"/>
+                            <constraint firstItem="h3G-1b-AIm" firstAttribute="top" secondItem="Beb-T7-Cfy" secondAttribute="top" id="xH7-87-NhE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OG9-rY-BL2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4735" y="-696"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="BackgroundColor">
