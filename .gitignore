@@ -46,5 +46,3 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 AboutiOS.xcodeproj/xcuserdata/zongbeen.xcuserdatad/xcschemes/xcschememanagement.plist
 .DS_Store
-.DS_Store
-/AboutiOS
