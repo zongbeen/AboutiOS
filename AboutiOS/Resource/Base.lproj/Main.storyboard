@@ -257,6 +257,9 @@
                             <constraint firstItem="h3G-1b-AIm" firstAttribute="top" secondItem="Beb-T7-Cfy" secondAttribute="top" id="xH7-87-NhE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="h3G-1b-AIm" id="aBp-XS-04E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OG9-rY-BL2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
