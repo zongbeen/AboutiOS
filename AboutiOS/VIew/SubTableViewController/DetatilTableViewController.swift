@@ -35,7 +35,16 @@ extension DetatilTableViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.allSections[section].items.count
     }
-
+    //MARK: - 섹션 header 설정
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.allSections[section].header
+    }
+    
+    //MARK: - 섹션 header의 높이 설정
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return viewModel.allSections[section].header == nil ? 0 : 30
+    }
+    
     //MARK: - 셀 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ??

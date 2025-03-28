@@ -9,12 +9,12 @@ import Foundation
 
 class DetatilTableViewModel {
     let allSections: [Section] = [
-        Section(header: nil, footer: nil, items: [
+        Section(header: "Table View Cell Style", footer: nil, items: [
             Item(imageName: "list.dash", title: Titles.plainStyle),
             Item(imageName: "list.bullet.below.rectangle", title: Titles.groupedStyle),
             Item(imageName: "list.bullet.rectangle", title: Titles.insetGroupedStyle),
         ]),
-        Section(header: nil, footer: nil, items: [
+        Section(header: "Commit Editing Style", footer: nil, items: [
             Item(imageName: "arrowshape.left.arrowshape.right.fill", title: Titles.swipe),
         ])
     ]
