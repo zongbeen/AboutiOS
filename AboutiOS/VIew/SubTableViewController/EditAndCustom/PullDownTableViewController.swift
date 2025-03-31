@@ -10,6 +10,7 @@ import UIKit
 struct PullDownOption {
     var data: String = "Data1"
     var type: String = "Type1"
+    var style: String = "Style1"
 }
 
 class PullDownTableViewController: UIViewController {
@@ -18,12 +19,12 @@ class PullDownTableViewController: UIViewController {
     
     let dataOptions = ["Data1", "Data2", "Data3"]
     let typeOptions = ["Type1", "Type2", "Type3"]
+    let styleOptions = ["Style1", "Style2", "Style3"]
     
     private let sections: [Section] = [
-        Section(header: "Header1", footer: "footer1", items: [
+        Section(header: "Header1", footer: nil, items: [
             Item(imageName: "", title: "데이터 설정"),
-            Item(imageName: "", title: "비어있는 셀"),
-            Item(imageName: "", title: "비어있는 셀")
+            Item(imageName: "", title: "스타일 설정")
         ]),
         Section(header: "Header2", footer: nil, items: [
             Item(imageName: "", title: "타입 설정"),
@@ -103,21 +104,35 @@ extension PullDownTableViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        configureCell(cell, at: indexPath)
-        return cell
-    }
-    
-    private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        let item = sections[indexPath.section].items[indexPath.row]
-        cell.textLabel?.text = item.title
-        
-        if indexPath.row == 0 {
-            let button = indexPath.section == 0
-            ? makeSelectionButton(titleKeyPath: \PullDownOption.data, updateKeyPath: \PullDownOption.data, options: dataOptions)
-            : makeSelectionButton(titleKeyPath: \PullDownOption.type, updateKeyPath: \PullDownOption.type, options: typeOptions)
-            cell.accessoryView = button
-        } else {
-            cell.accessoryView = nil
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = makeSelectionButton(titleKeyPath: \PullDownOption.data,
+                                                           updateKeyPath: \PullDownOption.data,
+                                                           options: dataOptions)
+            case 1: 
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = makeSelectionButton(titleKeyPath: \PullDownOption.style,
+                                                           updateKeyPath: \PullDownOption.style,
+                                                           options: styleOptions)
+            case 2: cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+            default: break
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = makeSelectionButton(titleKeyPath: \PullDownOption.type,
+                                                           updateKeyPath: \PullDownOption.type,
+                                                           options: typeOptions)
+            case 1: cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+            case 2: cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+            default: break
+            }
+        default: break
         }
+        return cell
     }
 }
