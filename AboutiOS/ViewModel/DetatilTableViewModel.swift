@@ -14,7 +14,7 @@ class DetatilTableViewModel {
             Item(imageName: "list.bullet.below.rectangle", title: Titles.groupedStyle),
             Item(imageName: "list.bullet.rectangle", title: Titles.insetGroupedStyle),
         ]),
-        Section(header: "Commit Editing Style", footer: nil, items: [
+        Section(header: "Cell Editing & Custom Actions", footer: nil, items: [
             Item(imageName: "arrowshape.left.arrowshape.right.fill", title: Titles.swipe),
             Item(imageName: "button.horizontal.top.press.fill", title: Titles.pulldown)
         ])
