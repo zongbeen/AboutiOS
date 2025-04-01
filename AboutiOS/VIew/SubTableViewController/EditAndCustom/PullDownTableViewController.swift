@@ -7,6 +7,48 @@
 
 import UIKit
 
+class PullDownButton<T>: UIButton {
+    private var keyPath: WritableKeyPath<PullDownOption, T>!
+    private var configModel: PullDownOption!
+    
+    init(configModel: PullDownOption, keyPath: WritableKeyPath<PullDownOption, T>, options: [T]) {
+        super.init(frame: .zero)
+        self.configModel = configModel
+        self.keyPath = keyPath
+        self.showsMenuAsPrimaryAction = true
+        self.tintColor = .systemGray
+        self.contentHorizontalAlignment = .trailing
+        self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        
+        updateTitle(with: configModel[keyPath: keyPath])
+        
+        self.menu = UIMenu(children: options.map { option in
+            UIAction(title: "\(option)") { [weak self] _ in
+                guard let self = self else { return }
+                self.configModel[keyPath: self.keyPath] = option
+                self.updateTitle(with: option)
+            }
+        })
+        
+        self.sizeToFit()
+        self.frame.size = CGSize(width: max(self.frame.width, 80), height: max(self.frame.height, 30))
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func updateTitle(with value: T) {
+        let image = UIImage(systemName: "chevron.up.chevron.down")!
+        let attributedString = NSMutableAttributedString(string: "\(value) ")
+        let attachment = NSTextAttachment()
+        attachment.image = image.withRenderingMode(.alwaysTemplate)
+        attributedString.append(NSAttributedString(attachment: attachment))
+        attributedString.addAttribute(.foregroundColor, value: UIColor.systemGray, range: NSRange(location: 0, length: attributedString.length))
+        self.setAttributedTitle(attributedString, for: .normal)
+    }
+}
+
 struct PullDownOption {
     var data: String = "Data1"
     var type: String = "Type1"
@@ -38,38 +80,6 @@ class PullDownTableViewController: UIViewController {
         navigationItem.title = "Pull Down Table View"
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    private func makeSelectionButton<T>(titleKeyPath: KeyPath<PullDownOption, T>,
-                                        updateKeyPath: WritableKeyPath<PullDownOption, T>,
-                                        options: [T]) -> UIButton {
-        let button = UIButton(type: .system)
-        button.showsMenuAsPrimaryAction = true
-        setButtonTitle(button, value: configModel[keyPath: titleKeyPath])
-        
-        button.menu = UIMenu(children: options.map { option in
-            UIAction(title: "\(option)") { [weak self] _ in
-                self?.configModel[keyPath: updateKeyPath] = option
-                self?.setButtonTitle(button, value: option)
-            }
-        })
-        
-        button.tintColor = .systemGray
-        button.contentHorizontalAlignment = .trailing
-        button.sizeToFit()
-        button.frame.size = CGSize(width: max(button.frame.width, 80), height: max(button.frame.height, 30))
-        
-        return button
-    }
-    
-    private func setButtonTitle<T>(_ button: UIButton, value: T) {
-        let image = UIImage(systemName: "chevron.up.chevron.down")!
-        let attributedString = NSMutableAttributedString(string: "\(value) ")
-        let attachment = NSTextAttachment()
-        attachment.image = image.withRenderingMode(.alwaysTemplate)
-        attributedString.append(NSAttributedString(attachment: attachment))
-        attributedString.addAttribute(.foregroundColor, value: UIColor.systemGray, range: NSRange(location: 0, length: attributedString.length))
-        button.setAttributedTitle(attributedString, for: .normal)
     }
 }
 
@@ -104,32 +114,26 @@ extension PullDownTableViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         switch indexPath.section {
         case 0:
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-                cell.accessoryView = makeSelectionButton(titleKeyPath: \PullDownOption.data,
-                                                           updateKeyPath: \PullDownOption.data,
-                                                           options: dataOptions)
-            case 1: 
+                cell.accessoryView = PullDownButton(configModel: configModel, keyPath: \.data, options: dataOptions)
+            case 1:
                 cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-                cell.accessoryView = makeSelectionButton(titleKeyPath: \PullDownOption.style,
-                                                           updateKeyPath: \PullDownOption.style,
-                                                           options: styleOptions)
-            case 2: cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = PullDownButton(configModel: configModel, keyPath: \.style, options: styleOptions)
             default: break
             }
         case 1:
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-                cell.accessoryView = makeSelectionButton(titleKeyPath: \PullDownOption.type,
-                                                           updateKeyPath: \PullDownOption.type,
-                                                           options: typeOptions)
-            case 1: cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-            case 2: cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-            default: break
+                cell.accessoryView = PullDownButton(configModel: configModel, keyPath: \.type, options: typeOptions)
+            default:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = nil
             }
         default: break
         }
