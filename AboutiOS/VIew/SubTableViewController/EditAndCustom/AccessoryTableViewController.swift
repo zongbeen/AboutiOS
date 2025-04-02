@@ -1,5 +1,5 @@
 //
-//  PullDownTableViewController.swift
+//  AccessoryTableViewController.swift
 //  AboutiOS
 //
 //  Created by 한종빈 on 3/30/25.
@@ -7,35 +7,39 @@
 
 import UIKit
 
-class PullDownTableViewController: UIViewController {
+class AccessoryTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var configModel = PullDownOption()
+    var pullDownOption = PullDownOption()
     
     let dataOptions = ["Data_one", "Data_two", "Data_three"]
     let typeOptions = ["Type_one", "Type_two", "Type_three"]
     let styleOptions = ["Style_one", "Style_two", "Style_three"]
     
     private let sections: [Section] = [
-        Section(header: "Header1", footer: nil, items: [
+        Section(header: "accessoryType", footer: nil, items: [
+            Item(imageName: "", title: ".none"),
+            Item(imageName: "", title: ".disclosureIndicator"),
+            Item(imageName: "", title: ".detailDisclosureButton"),
+            Item(imageName: "", title: ".checkmark"),
+            Item(imageName: "", title: ".detailButton")
+        ])
+        ,
+        Section(header: "accessoryView", footer: nil, items: [
             Item(imageName: "", title: "데이터 설정"),
-            Item(imageName: "", title: "스타일 설정")
-        ]),
-        Section(header: "Header2", footer: nil, items: [
-            Item(imageName: "", title: "타입 설정"),
-            Item(imageName: "", title: "비어있는 셀"),
-            Item(imageName: "", title: "비어있는 셀")
+            Item(imageName: "", title: "스타일 설정"),
+            Item(imageName: "", title: "타입 설정")
         ])
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Pull Down Table View"
+        navigationItem.title = "Accessory Table View"
         tableView.delegate = self
         tableView.dataSource = self
     }
 }
 
-extension PullDownTableViewController: UITableViewDataSource, UITableViewDelegate {
+extension AccessoryTableViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -72,17 +76,32 @@ extension PullDownTableViewController: UITableViewDataSource, UITableViewDelegat
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-                cell.accessoryView = PullDownButton(configModel: configModel, keyPath: \.data, options: dataOptions)
+                cell.accessoryType = .none
             case 1:
                 cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-                cell.accessoryView = PullDownButton(configModel: configModel, keyPath: \.style, options: styleOptions)
+                cell.accessoryType = .disclosureIndicator
+            case 2:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryType = .detailDisclosureButton
+            case 3:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryType = .checkmark
+            case 4:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryType = .detailButton
             default: break
             }
         case 1:
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
-                cell.accessoryView = PullDownButton(configModel: configModel, keyPath: \.type, options: typeOptions)
+                cell.accessoryView = PullDownButton(configModel: pullDownOption, keyPath: \.data, options: dataOptions)
+            case 1:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = PullDownButton(configModel: pullDownOption, keyPath: \.style, options: styleOptions)
+            case 2:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = PullDownButton(configModel: pullDownOption, keyPath: \.type, options: typeOptions)
             default:
                 cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
                 cell.accessoryView = nil

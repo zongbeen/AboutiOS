@@ -16,7 +16,7 @@ class DetatilTableViewModel {
         ]),
         Section(header: "Cell Editing & Custom Actions", footer: nil, items: [
             Item(imageName: "arrowshape.left.arrowshape.right.fill", title: Titles.swipe),
-            Item(imageName: "button.horizontal.top.press.fill", title: Titles.pulldown)
+            Item(imageName: "button.horizontal.top.press.fill", title: Titles.accessory)
         ])
     ]
 }

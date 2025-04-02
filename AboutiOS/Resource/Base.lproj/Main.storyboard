@@ -265,10 +265,10 @@
             </objects>
             <point key="canvasLocation" x="4735" y="-696"/>
         </scene>
-        <!--Pull Down Table View Controller-->
+        <!--Accessory Table View Controller-->
         <scene sceneID="l8g-ig-Nmv">
             <objects>
-                <viewController storyboardIdentifier="PullDownTableViewController" id="c35-vd-0bb" customClass="PullDownTableViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PullDownTableViewController" id="c35-vd-0bb" customClass="AccessoryTableViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nTX-hP-YvK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

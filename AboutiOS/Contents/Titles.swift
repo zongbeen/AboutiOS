@@ -13,7 +13,7 @@ enum Titles {
     static let insetGroupedStyle = "InsetGrouped Style"
     
     static let swipe = "Swipe"
-    static let pulldown = "Pull Down"
+    static let accessory = "Accessory"
     
     static let webView = "WebView"
 }

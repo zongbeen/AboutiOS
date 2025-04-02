@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9EA9631F2D99265C00037622 /* PullDownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9631E2D99265C00037622 /* PullDownTableViewController.swift */; };
+		9EA9631F2D99265C00037622 /* AccessoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9631E2D99265C00037622 /* AccessoryTableViewController.swift */; };
 		9EA963262D9BF98A00037622 /* PullDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA963252D9BF98A00037622 /* PullDownButton.swift */; };
 		9EA963282D9BF9CC00037622 /* PullDownOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA963272D9BF9CC00037622 /* PullDownOption.swift */; };
 		9ECB956B2D7B1FBC003FACB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB956A2D7B1FBC003FACB6 /* AppDelegate.swift */; };
@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9EA9631E2D99265C00037622 /* PullDownTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullDownTableViewController.swift; sourceTree = "<group>"; };
+		9EA9631E2D99265C00037622 /* AccessoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryTableViewController.swift; sourceTree = "<group>"; };
 		9EA963252D9BF98A00037622 /* PullDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullDownButton.swift; sourceTree = "<group>"; };
 		9EA963272D9BF9CC00037622 /* PullDownOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullDownOption.swift; sourceTree = "<group>"; };
 		9ECB95672D7B1FBC003FACB6 /* AboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				9ED78ACA2D919B2A00D071E3 /* SwipeTableViewController.swift */,
-				9EA9631E2D99265C00037622 /* PullDownTableViewController.swift */,
+				9EA9631E2D99265C00037622 /* AccessoryTableViewController.swift */,
 			);
 			path = EditAndCustom;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 				9ED78ACB2D919B2A00D071E3 /* SwipeTableViewController.swift in Sources */,
 				9ECB956D2D7B1FBC003FACB6 /* SceneDelegate.swift in Sources */,
 				9EA963282D9BF9CC00037622 /* PullDownOption.swift in Sources */,
-				9EA9631F2D99265C00037622 /* PullDownTableViewController.swift in Sources */,
+				9EA9631F2D99265C00037622 /* AccessoryTableViewController.swift in Sources */,
 				9EE04F1C2D85425200D3B9BC /* DetatilTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
