@@ -22,8 +22,7 @@ class AccessoryTableViewController: UIViewController {
             Item(imageName: "", title: ".detailDisclosureButton"),
             Item(imageName: "", title: ".checkmark"),
             Item(imageName: "", title: ".detailButton")
-        ])
-        ,
+        ]),
         Section(header: "accessoryView", footer: nil, items: [
             Item(imageName: "", title: "데이터 설정"),
             Item(imageName: "", title: "스타일 설정"),
