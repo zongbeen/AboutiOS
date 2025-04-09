@@ -9,7 +9,7 @@ import UIKit
 
 class GroupedTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    private let allSections: [Section] = [
+    private let sections: [Section] = [
         Section(header: "Header1", footer: "footer1", items: [
             Item(imageName: "tablecells.fill", title: "Cell1"),
             Item(imageName: "tablecells.fill", title: "Cell2"),
@@ -44,32 +44,32 @@ class GroupedTableViewController: UIViewController {
 extension GroupedTableViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: - 섹션 개수
     func numberOfSections(in tableView: UITableView) -> Int {
-        return allSections.count
+        return sections.count
     }
     
     //MARK: - 각 섹션별 행 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allSections[section].items.count
+        return sections[section].items.count
     }
 
     //MARK: - 섹션 header 설정
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return allSections[section].header
+        return sections[section].header
     }
     
     //MARK: - 섹션 header의 높이 설정
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return allSections[section].header == nil ? 0 : 30
+        return sections[section].header == nil ? 0 : 30
     }
     
     //MARK: - 섹션 footer 설정
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return allSections[section].footer
+        return sections[section].footer
     }
     
     //MARK: - 섹션 footer의 높이 설정
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return allSections[section].footer == nil ? 0 : 30
+        return sections[section].footer == nil ? 0 : 30
     }
     
     //MARK: - 셀 설정
@@ -77,7 +77,7 @@ extension GroupedTableViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ??
         UITableViewCell(style: .default, reuseIdentifier: "Cell")
         
-        let cellData = allSections[indexPath.section].items[indexPath.row]
+        let cellData = sections[indexPath.section].items[indexPath.row]
         
         cell.imageView?.image = UIImage(systemName: cellData.imageName)
         cell.textLabel?.text = cellData.title

@@ -28,21 +28,21 @@ class DetatilTableViewController: UIViewController {
 extension DetatilTableViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: - 섹션 개수
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.allSections.count
+        return viewModel.sections.count
     }
     
     //MARK: - 각 섹션별 행 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.allSections[section].items.count
+        return viewModel.sections[section].items.count
     }
     //MARK: - 섹션 header 설정
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.allSections[section].header
+        return viewModel.sections[section].header
     }
     
     //MARK: - 섹션 header의 높이 설정
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return viewModel.allSections[section].header == nil ? 0 : 30
+        return viewModel.sections[section].header == nil ? 0 : 30
     }
     
     //MARK: - 셀 설정
@@ -50,7 +50,7 @@ extension DetatilTableViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ??
         UITableViewCell(style: .default, reuseIdentifier: "Cell")
         
-        let cellData = viewModel.allSections[indexPath.section].items[indexPath.row]
+        let cellData = viewModel.sections[indexPath.section].items[indexPath.row]
         
         cell.imageView?.image = UIImage(systemName: cellData.imageName)
         cell.textLabel?.text = cellData.title
@@ -63,7 +63,7 @@ extension DetatilTableViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let selectedItem = viewModel.allSections[indexPath.section].items[indexPath.row]
+        let selectedItem = viewModel.sections[indexPath.section].items[indexPath.row]
         
         switch selectedItem.title {
         case Titles.plainStyle:

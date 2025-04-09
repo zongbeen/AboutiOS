@@ -8,7 +8,7 @@
 import Foundation
 
 class DetatilTableViewModel {
-    let allSections: [Section] = [
+    let sections: [Section] = [
         Section(header: "Table View Cell Style", footer: nil, items: [
             Item(imageName: "list.dash", title: Titles.plainStyle),
             Item(imageName: "list.bullet.below.rectangle", title: Titles.groupedStyle),

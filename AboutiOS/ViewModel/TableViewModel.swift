@@ -8,7 +8,7 @@
 import Foundation
 
 class TableViewModel {
-    private let allSections: [Section] = [
+    private let sections: [Section] = [
         Section(header: "Table View", footer: "This is a table view section", items: [
             Item(imageName: "doc.badge.gearshape.fill", title: "TableView Detail")
         ]),
@@ -21,14 +21,14 @@ class TableViewModel {
     var onDataUpdated: (() -> Void)?
     
     init() {
-        filteredSections = allSections
+        filteredSections = sections
     }
     
     func filterSections(searchText: String) {
         if searchText.isEmpty {
-            filteredSections = allSections
+            filteredSections = sections
         } else {
-            filteredSections = allSections.compactMap { section in
+            filteredSections = sections.compactMap { section in
                 let filteredItems = section.items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
                 return filteredItems.isEmpty ? nil : Section(header: section.header, footer: section.footer, items: filteredItems)
             }
