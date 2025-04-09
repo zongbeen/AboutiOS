@@ -10,13 +10,14 @@ import UIKit
 class SwitchButtonTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var pullDownOption = PullDownOption()
-    
+    var extensionCell = false
     private let sections: [Section] = [
-        Section(header: "Uknown", footer: nil, items: [
-            Item(imageName: "", title: "Uknown")
+        Section(header: "Default", footer: nil, items: [
+            Item(imageName: "", title: "DefaultCell")
         ]),
-        Section(header: "Uknown", footer: nil, items: [
-            Item(imageName: "", title: "Uknown")
+        Section(header: "SwitchButton", footer: nil, items: [
+            Item(imageName: "", title: "SwitchButtonCell"),
+            Item(imageName: "", title: "ExtensionCell")
         ])
     ]
     
@@ -26,6 +27,19 @@ class SwitchButtonTableViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    private func createSwitch(isOn: Bool, action: @escaping (Bool) -> Void) -> UISwitch {
+        let switchView = UISwitch()
+        switchView.isOn = isOn
+        switchView.addAction(
+            UIAction { uiAction in
+                let switchControl = uiAction.sender as! UISwitch
+                action(switchControl.isOn)
+            },
+            for: .valueChanged
+        )
+        return switchView
+    }
 }
 
 extension SwitchButtonTableViewController: UITableViewDataSource, UITableViewDelegate {
@@ -34,7 +48,11 @@ extension SwitchButtonTableViewController: UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].items.count
+        switch section {
+        case 0: return sections[section].items.count
+        case 1: return extensionCell ? sections[section].items.count : sections[section].items.count - 1
+        default: return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -59,6 +77,30 @@ extension SwitchButtonTableViewController: UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = nil
+            default: break
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+                cell.accessoryView = createSwitch(isOn: extensionCell) { [weak self] isOn in
+                    self?.extensionCell = isOn
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                }
+            case 1:
+                cell.textLabel?.text = sections[indexPath.section].items[indexPath.row].title
+            default: break
+            }
+        default: break
+        }
         return cell
     }
 }
