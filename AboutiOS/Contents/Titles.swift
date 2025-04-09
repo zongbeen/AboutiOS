@@ -14,6 +14,7 @@ enum Titles {
     
     static let swipe = "Swipe"
     static let accessory = "Accessory"
+    static let switchButton = "SwitchButton"
     
     static let webView = "WebView"
 }

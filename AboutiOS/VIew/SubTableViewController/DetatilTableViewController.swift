@@ -91,6 +91,11 @@ extension DetatilTableViewController: UITableViewDataSource, UITableViewDelegate
                 .instantiateViewController(withIdentifier: "PullDownTableViewController") as? AccessoryTableViewController {
                 navigationController?.pushViewController(viewController, animated: true)
             }
+        case Titles.switchButton:
+            if let viewController = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "SwitchButtonTableViewController") as? SwitchButtonTableViewController {
+                navigationController?.pushViewController(viewController, animated: true)
+            }
         default: break
         }
     }
