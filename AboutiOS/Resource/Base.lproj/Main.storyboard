@@ -295,6 +295,36 @@
             </objects>
             <point key="canvasLocation" x="5382" y="-696"/>
         </scene>
+        <!--Switch Button Table View Controller-->
+        <scene sceneID="no2-dV-MHG">
+            <objects>
+                <viewController storyboardIdentifier="SwitchButtonTableViewController" id="pWX-67-dZP" customClass="SwitchButtonTableViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="26R-Pc-Eog">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LK3-Iq-0NV">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dg7-xM-Ewp"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LK3-Iq-0NV" firstAttribute="leading" secondItem="dg7-xM-Ewp" secondAttribute="leading" id="G9h-xQ-gmo"/>
+                            <constraint firstItem="dg7-xM-Ewp" firstAttribute="bottom" secondItem="LK3-Iq-0NV" secondAttribute="bottom" id="gyM-5p-tZd"/>
+                            <constraint firstItem="LK3-Iq-0NV" firstAttribute="top" secondItem="dg7-xM-Ewp" secondAttribute="top" id="nOO-lB-vaS"/>
+                            <constraint firstItem="dg7-xM-Ewp" firstAttribute="trailing" secondItem="LK3-Iq-0NV" secondAttribute="trailing" id="zDN-ZF-6fK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="LK3-Iq-0NV" id="yga-Q7-JHk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6f3-j1-ndi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6030" y="-696"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="BackgroundColor">
