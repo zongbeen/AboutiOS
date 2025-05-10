@@ -1,5 +1,5 @@
 //
-//  SwitchButtonTableViewController.swift
+//  SwitchButtonViewController.swift
 //  AboutiOS
 //
 //  Created by 한종빈 on 4/7/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SwitchButtonTableViewController: UIViewController {
+class SwitchButtonViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var pullDownOption = PullDownOption()
     var extensionCell = false
@@ -42,7 +42,7 @@ class SwitchButtonTableViewController: UIViewController {
     }
 }
 
-extension SwitchButtonTableViewController: UITableViewDataSource, UITableViewDelegate {
+extension SwitchButtonViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }

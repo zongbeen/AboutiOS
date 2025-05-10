@@ -1,5 +1,5 @@
 //
-//  AccessoryTableViewController.swift
+//  PullDownViewController.swift
 //  AboutiOS
 //
 //  Created by 한종빈 on 3/30/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccessoryTableViewController: UIViewController {
+class PullDownButtonViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var pullDownOption = PullDownOption()
     
@@ -38,7 +38,7 @@ class AccessoryTableViewController: UIViewController {
     }
 }
 
-extension AccessoryTableViewController: UITableViewDataSource, UITableViewDelegate {
+extension PullDownButtonViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }

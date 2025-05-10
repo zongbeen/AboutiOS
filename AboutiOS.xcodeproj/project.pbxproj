@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9EA9631F2D99265C00037622 /* AccessoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9631E2D99265C00037622 /* AccessoryTableViewController.swift */; };
+		9EA9631F2D99265C00037622 /* PullDownButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9631E2D99265C00037622 /* PullDownButtonViewController.swift */; };
 		9EA963262D9BF98A00037622 /* PullDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA963252D9BF98A00037622 /* PullDownButton.swift */; };
 		9EA963282D9BF9CC00037622 /* PullDownOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA963272D9BF9CC00037622 /* PullDownOption.swift */; };
 		9ECB956B2D7B1FBC003FACB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB956A2D7B1FBC003FACB6 /* AppDelegate.swift */; };
@@ -17,7 +17,7 @@
 		9ECB95742D7B1FBD003FACB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB95732D7B1FBD003FACB6 /* Assets.xcassets */; };
 		9ECB95772D7B1FBD003FACB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB95752D7B1FBD003FACB6 /* LaunchScreen.storyboard */; };
 		9ED78ACB2D919B2A00D071E3 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED78ACA2D919B2A00D071E3 /* SwipeTableViewController.swift */; };
-		9EDCB3B82DA3FBA900D04A40 /* SwitchButtonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCB3B72DA3FBA900D04A40 /* SwitchButtonTableViewController.swift */; };
+		9EDCB3B82DA3FBA900D04A40 /* SwitchButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCB3B72DA3FBA900D04A40 /* SwitchButtonViewController.swift */; };
 		9EE04F182D81B5ED00D3B9BC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE04F172D81B5ED00D3B9BC /* WebViewController.swift */; };
 		9EE04F1A2D81BE6700D3B9BC /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9EE04F192D81BE6700D3B9BC /* index.html */; };
 		9EE04F1C2D85425200D3B9BC /* DetatilTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE04F1B2D85425200D3B9BC /* DetatilTableViewController.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9EA9631E2D99265C00037622 /* AccessoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryTableViewController.swift; sourceTree = "<group>"; };
+		9EA9631E2D99265C00037622 /* PullDownButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullDownButtonViewController.swift; sourceTree = "<group>"; };
 		9EA963252D9BF98A00037622 /* PullDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullDownButton.swift; sourceTree = "<group>"; };
 		9EA963272D9BF9CC00037622 /* PullDownOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullDownOption.swift; sourceTree = "<group>"; };
 		9ECB95672D7B1FBC003FACB6 /* AboutiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AboutiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +43,7 @@
 		9ECB95762D7B1FBD003FACB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9ECB95782D7B1FBD003FACB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ED78ACA2D919B2A00D071E3 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
-		9EDCB3B72DA3FBA900D04A40 /* SwitchButtonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonTableViewController.swift; sourceTree = "<group>"; };
+		9EDCB3B72DA3FBA900D04A40 /* SwitchButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonViewController.swift; sourceTree = "<group>"; };
 		9EE04F172D81B5ED00D3B9BC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9EE04F192D81BE6700D3B9BC /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		9EE04F1B2D85425200D3B9BC /* DetatilTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetatilTableViewController.swift; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				9ED78ACA2D919B2A00D071E3 /* SwipeTableViewController.swift */,
-				9EA9631E2D99265C00037622 /* AccessoryTableViewController.swift */,
-				9EDCB3B72DA3FBA900D04A40 /* SwitchButtonTableViewController.swift */,
+				9EA9631E2D99265C00037622 /* PullDownButtonViewController.swift */,
+				9EDCB3B72DA3FBA900D04A40 /* SwitchButtonViewController.swift */,
 			);
 			path = EditAndCustom;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 			files = (
 				9ECB956F2D7B1FBC003FACB6 /* TableViewController.swift in Sources */,
 				9EE04F232D85495B00D3B9BC /* TableViewModel.swift in Sources */,
-				9EDCB3B82DA3FBA900D04A40 /* SwitchButtonTableViewController.swift in Sources */,
+				9EDCB3B82DA3FBA900D04A40 /* SwitchButtonViewController.swift in Sources */,
 				9EA963262D9BF98A00037622 /* PullDownButton.swift in Sources */,
 				9ECB956B2D7B1FBC003FACB6 /* AppDelegate.swift in Sources */,
 				9EE04F182D81B5ED00D3B9BC /* WebViewController.swift in Sources */,
@@ -271,7 +271,7 @@
 				9ED78ACB2D919B2A00D071E3 /* SwipeTableViewController.swift in Sources */,
 				9ECB956D2D7B1FBC003FACB6 /* SceneDelegate.swift in Sources */,
 				9EA963282D9BF9CC00037622 /* PullDownOption.swift in Sources */,
-				9EA9631F2D99265C00037622 /* AccessoryTableViewController.swift in Sources */,
+				9EA9631F2D99265C00037622 /* PullDownButtonViewController.swift in Sources */,
 				9EE04F1C2D85425200D3B9BC /* DetatilTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

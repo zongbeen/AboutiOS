@@ -265,10 +265,10 @@
             </objects>
             <point key="canvasLocation" x="4735" y="-696"/>
         </scene>
-        <!--Accessory Table View Controller-->
+        <!--Pull Down Button View Controller-->
         <scene sceneID="l8g-ig-Nmv">
             <objects>
-                <viewController storyboardIdentifier="PullDownTableViewController" id="c35-vd-0bb" customClass="AccessoryTableViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PullDownTableViewController" id="c35-vd-0bb" customClass="PullDownButtonViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nTX-hP-YvK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,10 +295,10 @@
             </objects>
             <point key="canvasLocation" x="5382" y="-696"/>
         </scene>
-        <!--Switch Button Table View Controller-->
+        <!--Switch Button View Controller-->
         <scene sceneID="no2-dV-MHG">
             <objects>
-                <viewController storyboardIdentifier="SwitchButtonTableViewController" id="pWX-67-dZP" customClass="SwitchButtonTableViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwitchButtonTableViewController" id="pWX-67-dZP" customClass="SwitchButtonViewController" customModule="AboutiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26R-Pc-Eog">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
