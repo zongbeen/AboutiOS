@@ -44,9 +44,18 @@ class SwipeTableViewController: UIViewController {
     }
     
     @objc func addItem() {
-        let newItem = Item(imageName: "plus", title: "New Item")
+        let existingTitles = sections.flatMap { $0.items.map { $0.title } }
+
+        let possibleTitles = (1...50).map { "New Item\($0)" }.shuffled()
+        guard let availableTitle = possibleTitles.first(where: { !existingTitles.contains($0) }) else {
+            return
+        }
+
+        let newItem = Item(imageName: "plus", title: availableTitle)
+
         sections[0].items.append(newItem)
         saveSections()
+
         let newIndexPath = IndexPath(row: sections[0].items.count - 1, section: 0)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
