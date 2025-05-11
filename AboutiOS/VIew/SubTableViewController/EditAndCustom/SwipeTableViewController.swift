@@ -13,7 +13,7 @@ class SwipeTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "TableView"
+        title = "Swipe Tablem View"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
         
         tableView.dataSource = self
